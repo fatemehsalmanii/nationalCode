@@ -33,30 +33,20 @@ const checkCodeMeli = (code) => {
     (s < 2 && numbers.at(-1) === s) || (s >= 2 && numbers.at(-1) === 11 - s)
   );
 };
+
 let box = document.querySelector("#boxInput");
-
 let inp = document.getElementById("inp");
-
 let otps = document.querySelectorAll(".otp");
-
 inp.value = "";
 
 inp.addEventListener("focus", (event) => {
-  if (event.target.value.length <= 1) {
-    otps[0].innerHTML =
-      (event.target.value[0] || "") + `<span id="current">|</span>`;
-
-    otps[0].classList.add("active");
-  }
+  otps[event.target.value.length].classList.add("active");
 });
 
 inp.addEventListener("blur", () => {
   let activeItem = document.querySelector(".active");
-
   activeItem.style.boxShadow = "none";
-
   activeItem.innerHTML = "";
-
   activeItem.classList.remove("active");
 });
 
@@ -75,32 +65,18 @@ inp.addEventListener("input", (event) => {
   otps.forEach((item, index) => {
     if (index == event.target.value.length) {
       item.classList.add("active");
-
-      item.innerHTML =
-        (event.target.value[index] || "") + `<span id="current">|</span>`;
     } else {
       item.style.boxShadow = "none";
-
-      item.innerHTML = event.target.value[index] || "";
-
       item.classList.remove("active");
     }
+    item.innerHTML = event.target.value[index] || "";
   });
 });
 
-// const inputs = document.querySelectorAll("input");
-// // inputs.
+
+
 function relativeIcon(iconName) {
   const icon = document.getElementById("icon");
   icon.removeAttribute("class");
   icon.setAttribute("class", `fa ${iconName}`);
 }
-
-// function checkNationaliti() {
-
-//   let national = "";
-//   for (let index = 0; index < inputs.length; index++) {
-//     national = national + `${inputs[index].value}`;
-//   }
-
-// }

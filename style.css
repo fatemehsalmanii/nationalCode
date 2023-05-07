@@ -15,6 +15,7 @@ body {
   box-sizing: border-box;
   /* background-image: url(image/images\ \(1\).jpg); */
 }
+
 #box {
   /* border: 1px solid black; */
   width: 447px;
@@ -27,7 +28,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
 }
 
 #boxInput {
@@ -36,51 +37,59 @@ body {
   margin: 40px auto;
   gap: 6px;
 }
-#boxInput input {
- opacity: 0;
- position: absolute;
- width: 100%;
-}
-input:focus {
-    outline: none;
-    /* border-bottom: rgb(35, 11, 141); */
-    color: gray;
-    /* box-shadow: ; */
-  }
-#click-buttom {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-#click-buttom button{
-    width: 150px;
-    height: 40px;
-    color: white;
-    background-color: #2B2B2B;
-    border: none;
-    border-radius: 38px;
-    box-shadow: 0 0 8px 1px grey;
-    font-family: "vazir", sans-serif;
-    cursor: pointer;
 
-    
-   
+#boxInput input {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
 }
+
+input:focus {
+  outline: none;
+  /* border-bottom: rgb(35, 11, 141); */
+  color: gray;
+  /* box-shadow: ; */
+}
+
+#click-buttom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#click-buttom button {
+  width: 150px;
+  height: 40px;
+  color: white;
+  background-color: #2B2B2B;
+  border: none;
+  border-radius: 38px;
+  box-shadow: 0 0 8px 1px grey;
+  font-family: "vazir", sans-serif;
+  cursor: pointer;
+
+
+
+}
+
 input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-inner-spin-button{
-    -webkit-appearance: none;
-    margin: 0;
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-input[type="number"]{
+
+input[type="number"] {
   -webkit-appearance: textfield;
 
 }
-#box i{
+
+#box i {
   font-size: 20px;
-  
+
 }
-.otp{
+
+.otp {
   width: 30px;
   height: 30px;
   border-bottom: 1px solid black;
@@ -88,6 +97,17 @@ input[type="number"]{
   font-size: larger;
 }
 
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
 
+  to {
+    opacity: 1
+  }
+}
 
-
+.otp.active::after {
+  content: "|";
+  animation: blink .9s infinite;
+}
