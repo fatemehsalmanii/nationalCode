@@ -36,12 +36,14 @@ body {
   display: flex;
   margin: 40px auto;
   gap: 6px;
+  position: relative;
 }
 
 #boxInput input {
   opacity: 0;
   position: absolute;
   width: 100%;
+  height: 100%;
 }
 
 input:focus {
